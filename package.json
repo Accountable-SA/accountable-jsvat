@@ -1,0 +1,70 @@
+{
+  "name": "@accountable/jsvat",
+  "version": "0.0.0-development",
+  "description": "Check the validity of the format of a VAT number",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+  "types": "./lib/cjs/types/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+    "test": "jest",
+    "semantic-release": "semantic-release",
+    "prepack": "npm run build"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Accountable-SA/accountable-jsvat"
+  },
+  "keywords": [
+    "npm",
+    "javascript",
+    "typescript",
+    "esm",
+    "cjs",
+    "nodejs",
+    "commonjs",
+    "ecmascript",
+    "beginner",
+    "example",
+    "demonstration"
+  ],
+  "author": "clarkio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Accountable-SA/accountable-jsvat/issues"
+  },
+  "homepage": "https://github.com/Accountable-SA/accountable-jsvat#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.3",
+    "jest": "^29.6.2",
+    "semantic-release": "^21.0.7",
+    "@swc/jest": "^0.2.23",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}
