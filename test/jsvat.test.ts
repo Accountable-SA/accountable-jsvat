@@ -18,11 +18,11 @@ for (const [countryName, { name, codes, valid, validOnlyByFormat, invalid }] of 
       validOnlyByFormat.forEach((vat) => checkOnlyValidFormatVat(vat, [countryData]));
     });
 
-    test('should return "true" result for valid VATs wtesth extra dash characters', () => {
+    test('should return "true" result for valid VATs with extra dash characters', () => {
       valid.map((vat) => addCharsToString(vat, '-')).forEach((vat) => checkValidVat(vat, [countryData], codes, name));
     });
 
-    test('should return "true" result for valid VATs wtesth extra space characters', () => {
+    test('should return "true" result for valid VATs with extra space characters', () => {
       valid.map((vat) => addCharsToString(vat, ' ')).forEach((vat) => checkValidVat(vat, [countryData], codes, name));
     });
 
