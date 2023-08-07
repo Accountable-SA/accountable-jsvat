@@ -2,6 +2,12 @@
 
 Check the validity of the format of a VAT number. No dependencies.
 
+## Disclaimer
+
+This library is a fork of [jsvat](https://github.com/se-panfilov/jsvat) which in no longer maintained and all new pull requests to it are ignored for long time.
+
+So in [Accountable](https://www.accountable.eu/), we thought it would be great to add support for the new VAT number format and keep the library up to date and easily maintained as it is part of our day to day work.
+
 ## What is it?
 
 Small library to check validity VAT numbers (European + some others counties). ([learn more][1] about VAT)
@@ -48,8 +54,19 @@ checkVAT('BE0411905847', [austria]); // false: accept only Austria VATs
 
 ```javascript
 import { checkVAT } from '@accountable/jsvat';
-('countries');
+
 checkVAT('BE0411905847'); // no need to pass countries as all supported countries will be used as default behavior
+```
+
+- check against all supported countries except specific ones
+
+```javascript
+import { checkVAT, countries } from '@accountable/jsvat';
+import _omit from 'lodash/omit';
+
+const { france, germany, ...countriesToValidate } = countries;
+
+checkVAT('BE0411905847', countriesToValidate);
 ```
 
 ## Return value
@@ -82,19 +99,16 @@ export interface VatCheckResult {
 - 🇧🇪 Belgium
 - 🇧🇷 Brazil
 - 🇧🇬 Bulgaria
-- 🇨🇭 Switzerland
+- 🇭🇷 Croatia
 - 🇨🇾 Cyprus
 - 🇨🇿 Czech republic
-- 🇩🇪 Germany
 - 🇩🇰 Denmark
-- 🇬🇷 Greece
-- 🇪🇸 Spain
-- 🇪🇺 Europe
 - 🇪🇪 Estonia
+- 🇪🇺 Europe
 - 🇫🇮 Finland
 - 🇫🇷 France
-- 🇬🇧 United Kingdom
-- 🇭🇷 Croatia
+- 🇩🇪 Germany
+- 🇬🇷 Greece
 - 🇭🇺 Hungary
 - 🇮🇪 Ireland
 - 🇮🇹 Italy
@@ -109,9 +123,12 @@ export interface VatCheckResult {
 - 🇷🇴 Romania
 - 🇷🇺 Russia
 - 🇷🇸 Serbia
-- 🇸🇮 Slovenia
 - 🇸🇰 Slovakia Republic
+- 🇸🇮 Slovenia
+- 🇪🇸 Spain
 - 🇸🇪 Sweden
+- 🇬🇧 United Kingdom
+- 🇨🇭 Switzerland
 
 ## Extend countries list - add your own country:
 
