@@ -1,4 +1,4 @@
-## @accountable/jsvat
+# @accountable/jsvat
 
 Check the validity of the format of a VAT number. No dependencies.
 
