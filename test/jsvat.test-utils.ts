@@ -1,5 +1,5 @@
 import { checkVAT } from '../src/jsvat.index';
-import type { CountryConfig } from '../src/jsvat.type';
+import type { Country, CountryConfig } from '../src/jsvat.type';
 import fs from 'fs';
 import path from 'path';
 
@@ -43,8 +43,8 @@ export function addCharsToString(item, char) {
 export function getCountriesFixturesMap() {
   // * read all files in current directory
   const countryFixtureFilesNames = fs.readdirSync(path.join(__dirname, 'countries-fixtures'));
-  const countriesToHandlerMap: Record<
-    string,
+  const countriesToHandlerMap = {} as Record<
+    Country,
     {
       name: string;
       codes: string[];
@@ -52,7 +52,7 @@ export function getCountriesFixturesMap() {
       validOnlyByFormat: string[];
       invalid: string[];
     }
-  > = {};
+  >;
 
   // * import all files and add them to the map
   for (const countryFixtureFileName of countryFixtureFilesNames) {
