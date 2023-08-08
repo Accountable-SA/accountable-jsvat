@@ -9,7 +9,7 @@ export function getCountriesMap(): Record<Country, CountryConfig> {
 
   // * import all files and add them to the map
   for (const countryFileName of countryFilesNames) {
-    const [countryName] = countryFileName.split('.');
+    const [countryName] = countryFileName.split('.') as [Country, ...string[]];
     const countryFilePath = path.join(__dirname, 'countries', countryName);
     const countryFileData = require(countryFilePath);
     countriesToHandlerMap[countryName] = countryFileData[countryName];
