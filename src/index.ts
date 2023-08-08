@@ -1,6 +1,41 @@
-import { countriesMap } from './jsvat.organizer';
-
-export const countries = countriesMap;
+export {
+  countries,
+  andorra,
+  austria,
+  belgium,
+  brazil,
+  bulgaria,
+  croatia,
+  cyprus,
+  czechRepublic,
+  denmark,
+  estonia,
+  europe,
+  finland,
+  france,
+  germany,
+  greece,
+  hungary,
+  ireland,
+  italy,
+  latvia,
+  lithuania,
+  luxembourg,
+  malta,
+  netherlands,
+  norway,
+  poland,
+  portugal,
+  romania,
+  russia,
+  serbia,
+  slovakiaRepublic,
+  slovenia,
+  spain,
+  sweden,
+  switzerland,
+  unitedKingdom,
+} from './jsvat.organizer';
 
 export * from './jsvat.index';
 export * from './jsvat.type';

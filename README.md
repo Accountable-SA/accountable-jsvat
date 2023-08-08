@@ -23,6 +23,7 @@ So in [Accountable](https://www.accountable.eu/), we thought it would be great t
 
 Small library to check validity VAT numbers (European + some others counties). ([learn more][1] about VAT)
 
+- Rewritten into Typescript :new:
 - No dependencies
 - No http calls
 - 2-step checks: math + regexp
@@ -52,9 +53,7 @@ yarn add @accountable/jsvat
 - check against specific countries
 
 ```javascript
-import { checkVAT, countries } from '@accountable/jsvat';
-
-const { belgium, austria } = countries;
+import { checkVAT, belgium, austria } from '@accountable/jsvat';
 
 checkVAT('BE0411905847', [belgium]); // true: accept only Belgium VATs
 checkVAT('BE0411905847', [belgium, austria]); // true: accept only Belgium or Austria VATs
@@ -73,7 +72,6 @@ checkVAT('BE0411905847'); // no need to pass countries as all supported countrie
 
 ```javascript
 import { checkVAT, countries } from '@accountable/jsvat';
-import _omit from 'lodash/omit';
 
 const { france, germany, ...countriesToValidate } = countries;
 
@@ -141,7 +139,7 @@ export interface VatCheckResult {
 - 🇬🇧 United Kingdom
 - 🇨🇭 Switzerland
 
-## Extend countries list - add your own country:
+## Extend countries list - add your own country
 
 You can add your own country.
 In general `Country` should implement following structure:
@@ -150,12 +148,15 @@ In general `Country` should implement following structure:
 interface Country {
   name: string;
   codes: ReadonlyArray<string>;
-  calcFn: (vat: string, options?: object) => boolean; //options - isn't a mandatory param
   rules: {
     multipliers: {}; // you can leave it empty
     regex: ReadonlyArray<RegExp>;
   };
-}
+} & ({
+    calcFn: (vat: string, options?: object) => boolean; // use this if you want to check only format of VAT
+  } | {
+    calcWithFormatFn: (vat: string, options?: object) => {isValid: boolean, vat: string}; // use this if you want to check format of VAT and re-format it
+  })
 ```
 
 Example:

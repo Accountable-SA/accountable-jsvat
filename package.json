@@ -1,6 +1,6 @@
 {
   "name": "@accountable/jsvat",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "Check the validity of the format of a VAT number",
   "exports": {
     ".": {
@@ -39,14 +39,17 @@
     "npm",
     "javascript",
     "typescript",
-    "esm",
-    "cjs",
-    "nodejs",
-    "commonjs",
-    "ecmascript",
-    "beginner",
-    "example",
-    "demonstration"
+    "vat",
+    "vat number",
+    "vat number validation",
+    "vat number validator",
+    "vat number checker",
+    "vat number check",
+    "vat number format",
+    "vat number format validation",
+    "vat-number",
+    "eu-vat-number",
+    "vat-number-validation"
   ],
   "author": "accountable.eu",
   "license": "MIT",

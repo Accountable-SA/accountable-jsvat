@@ -1,7 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import { Country, CountryConfig } from './jsvat.type';
-
 import { andorra } from './countries/andorra';
 import { austria } from './countries/austria';
 import { belgium } from './countries/belgium';
@@ -38,7 +34,45 @@ import { sweden } from './countries/sweden';
 import { switzerland } from './countries/switzerland';
 import { unitedKingdom } from './countries/unitedKingdom';
 
-export const countriesMap = {
+export {
+  andorra,
+  austria,
+  belgium,
+  brazil,
+  bulgaria,
+  croatia,
+  cyprus,
+  czechRepublic,
+  denmark,
+  estonia,
+  europe,
+  finland,
+  france,
+  germany,
+  greece,
+  hungary,
+  ireland,
+  italy,
+  latvia,
+  lithuania,
+  luxembourg,
+  malta,
+  netherlands,
+  norway,
+  poland,
+  portugal,
+  romania,
+  russia,
+  serbia,
+  slovakiaRepublic,
+  slovenia,
+  spain,
+  sweden,
+  switzerland,
+  unitedKingdom,
+};
+
+export const countries = {
   andorra,
   austria,
   belgium,
