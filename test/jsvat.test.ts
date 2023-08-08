@@ -1,9 +1,7 @@
-import { getCountriesMap } from '../src/jsvat.organizer';
-import { CountryConfig } from '../src/jsvat.type';
+import { countriesMap } from '../src/jsvat.organizer';
 import { addCharsToString, checkInvalidVat, checkOnlyValidFormatVat, checkValidVat } from './jsvat.test-utils';
 import { getCountriesFixturesMap } from './jsvat.test-utils';
 
-const countriesMap = getCountriesMap();
 const countriesFixturesMap = getCountriesFixturesMap();
 
 for (const [countryName, { name, codes, valid, validOnlyByFormat, invalid }] of Object.entries(countriesFixturesMap)) {
