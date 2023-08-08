@@ -71,9 +71,9 @@ checkVAT('BE0411905847'); // no need to pass countries as all supported countrie
 - check against all supported countries except specific ones
 
 ```javascript
-import { checkVAT, countries } from '@accountable/jsvat';
+import { checkVAT, countriesMap } from '@accountable/jsvat';
 
-const { france, germany, ...countriesToValidate } = countries;
+const { france, germany, ...countriesToValidate } = countriesMap;
 
 checkVAT('BE0411905847', countriesToValidate);
 ```

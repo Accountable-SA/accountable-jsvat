@@ -1,5 +1,6 @@
 export {
   countries,
+  countriesMap,
   andorra,
   austria,
   belgium,

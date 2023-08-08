@@ -1,5 +1,5 @@
 import { CountryConfig, VatCheckResult } from './jsvat.type';
-import { countries } from './jsvat.organizer';
+import { countriesMap, countries } from './jsvat.organizer';
 
 /*
  * This is a copy of the original jsvat package, but with the following changes:
@@ -37,7 +37,7 @@ function getCountryCodes(country: CountryConfig): ReadonlyArray<string> {
   return [...country.codes, country.name === 'Greece' ? 'EL' : undefined].filter(Boolean) as ReadonlyArray<string>;
 }
 
-const countriesVATDoesNotStartWithCountryCode: ReadonlyArray<string> = [countries.brazil.name];
+const countriesVATDoesNotStartWithCountryCode: ReadonlyArray<string> = [countriesMap.brazil.name];
 
 function isVATStartWithCountryCode(countryName: string): boolean {
   return !countriesVATDoesNotStartWithCountryCode.includes(countryName);
@@ -77,10 +77,7 @@ function isVatValid(vat: string, country: CountryConfig) {
   return 'calcWithFormatFn' in country ? country.calcWithFormatFn(regexResult[2]) : country.calcFn(regexResult[2]);
 }
 
-export function checkVAT(
-  vat: string,
-  countriesList: ReadonlyArray<CountryConfig> = Object.values(countries)
-): VatCheckResult {
+export function checkVAT(vat: string, countriesList: ReadonlyArray<CountryConfig> = countries): VatCheckResult {
   if (!vat) return makeResult(vat, false);
   const cleanVAT = removeExtraChars(vat);
   const country = getCountry(cleanVAT, countriesList);

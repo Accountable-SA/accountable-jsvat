@@ -72,7 +72,7 @@ export {
   unitedKingdom,
 };
 
-export const countries = {
+export const countriesMap = {
   andorra,
   austria,
   belgium,
@@ -109,3 +109,5 @@ export const countries = {
   switzerland,
   unitedKingdom,
 };
+
+export const countries = Object.values(countriesMap);

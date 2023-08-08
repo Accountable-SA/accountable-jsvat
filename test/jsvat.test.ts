@@ -1,11 +1,11 @@
-import { countries } from '../src/jsvat.organizer';
+import { countriesMap } from '../src/jsvat.organizer';
 import { addCharsToString, checkInvalidVat, checkOnlyValidFormatVat, checkValidVat } from './jsvat.test-utils';
 import { getCountriesFixturesMap } from './jsvat.test-utils';
 
 const countriesFixturesMap = getCountriesFixturesMap();
 
 for (const [countryName, { name, codes, valid, validOnlyByFormat, invalid }] of Object.entries(countriesFixturesMap)) {
-  const countryData = countries[countryName];
+  const countryData = countriesMap[countryName];
 
   describe(countryName, () => {
     test('should return "true" result for valid VATs', () => {
