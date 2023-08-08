@@ -1,6 +1,6 @@
 {
   "name": "@accountable/jsvat",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Check the validity of the format of a VAT number",
   "exports": {
     ".": {
