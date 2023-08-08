@@ -1,7 +1,5 @@
 import { CountryConfig, VatCheckResult } from './jsvat.type';
-import { getCountriesMap } from './jsvat.organizer';
-
-const countriesMap = getCountriesMap();
+import { countriesMap } from './jsvat.organizer';
 
 /*
  * This is a copy of the original jsvat package, but with the following changes:

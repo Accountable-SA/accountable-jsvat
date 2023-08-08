@@ -1,6 +1,6 @@
-import { getCountriesMap } from './jsvat.organizer';
+import { countriesMap } from './jsvat.organizer';
 
-export const countries = getCountriesMap();
+export const countries = countriesMap;
 
 export * from './jsvat.index';
 export * from './jsvat.type';
