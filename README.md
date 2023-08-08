@@ -1,6 +1,17 @@
-# @accountable/jsvat
+<h1><p align="center">@accountable/jsvat</p></h1>
 
-Check the validity of the format of a VAT number. No dependencies.
+<p align="center">Check the validity of the format of a VAT number. No dependencies</p>
+<p align="center">
+  <a href="https://www.npmjs.com/package/@accountable/jsvat">
+    <img src="https://img.shields.io/npm/v/@accountable/jsvat.svg?style=flat-square&amp;logo=npm" alt="npm">
+  </a>
+  <a href="http://makeapullrequest.com">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
+  </a>
+  <a href="https://github.com/@accountable/jsvat/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="GitHub license">
+  </a>
+</p>
 
 ## Disclaimer
 
