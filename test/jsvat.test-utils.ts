@@ -5,9 +5,6 @@ import path from 'path';
 
 export function checkValidVat(vat: string, countriesList: CountryConfig[], codes, name) {
   const result = checkVAT(vat, countriesList);
-
-  // if (!result.isValid) console.info('Invalid VAT:', vat);
-
   expect(result.isValid).toBe(true);
   expect(result.isSupportedCountry).toBe(true);
   expect(result.isValidFormat).toBe(true);
@@ -19,15 +16,11 @@ export function checkValidVat(vat: string, countriesList: CountryConfig[], codes
 
 export function checkInvalidVat(vat: string, countriesList: CountryConfig[]) {
   const result = checkVAT(vat, countriesList);
-  // if (result.isValid) console.info('Following VAT should be invalid:', vat);
   expect(result.isValid).toBe(false);
 }
 
 export function checkOnlyValidFormatVat(vat: string, countriesList: CountryConfig[]) {
   const result = checkVAT(vat, countriesList);
-
-  // if (!result.isValid) console.info('Invalid VAT:', vat);
-
   expect(result.isValid).toBe(false);
   expect(result.isSupportedCountry).toBe(true);
   expect(result.isValidFormat).toBe(true);
