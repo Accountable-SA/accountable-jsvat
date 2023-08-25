@@ -1,14 +1,20 @@
 {
   "compilerOptions": {
+    "target": "ES6",
+    "lib": ["ES6", "DOM"],
+    "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "checkJs": true,
     "allowJs": true,
+    "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
+    "outDir": "../lib/esm",
+    "declarationDir": "../lib/esm/types",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["../src/**/*"],
+  "include": ["../src/**/*"]
 }
