@@ -24,7 +24,8 @@ jobs:
       - run: npm test
       - name: Check importing in ESM & CJS works as expected
         run: |
+          npm run build
           cd test/test-app
-          yarn
+          npm install
           node index.mjs
           node index.cjs
