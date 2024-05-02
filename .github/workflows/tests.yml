@@ -22,3 +22,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install --no-package-lock
       - run: npm test
+      - name: Check importing in ESM & CJS works as expected
+        run: |
+          npm run build
+          cd test/test-app
+          npm install
+          node index.mjs
+          node index.cjs
